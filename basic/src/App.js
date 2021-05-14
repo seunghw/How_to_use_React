@@ -5,8 +5,10 @@ import './App.css';
 function App() {
 
   let [글제목,글제목변경] = useState(['남자 코트 추천','강남 우동 맛집','연남 고기 맛집',]);
-  
   let [따봉, 따봉변경] = useState(0);
+
+  let[modal, modal변경] = useState(false);
+
   let posts = '광명 고기 맛집';
 /*
   function 제목바꾸기(){
@@ -43,8 +45,14 @@ function App() {
         <hr/>
       </div>
 
+      <button onClick={() => {  modal변경(!modal) }}>버튼</button>
+      {
+      
+      modal === true
+      ? <Modal />
+      : null
 
-      <Modal />
+      }
     
     </div>
   );
